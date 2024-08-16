@@ -1,16 +1,18 @@
 const app = Vue.createApp({
     data() {
         return {
-            product: 'Socks',
-            image: './assets/images/socks_blue.jpg',
-            inStock: true,
-            details: ['50% cotton', '30% wool', '20% polyester'],
-            variants: [
-                {id: 2245, color: 'Green'},
-                {id: 2265, color: 'Blue'}
-            ]
+            cart: [],
+            premium: false
+        }
+    },
+    methods: {
+        updateCart(id) {
+            this.cart.push(id)
+        },
+        removeFromCart() {
+            if (this.cart.length > 0) {
+                this.cart.pop()
+            }
         }
     }
 })
-
-const product = 'Socks'
